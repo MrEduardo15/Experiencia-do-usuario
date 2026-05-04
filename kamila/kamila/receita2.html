@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo Ganho - Gestão Financeira</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="perfil.css">
+</head>
+<body>
+    <header class="perfil-header">
+        <div class="header-linha-topo">
+        <div class="icones-menu">
+            <!-- icone para voltar -->
+             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#10BE00">
+                <path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z"/>
+            </svg>
+        </div>
+      
+      <div class="boas-vindas">
+        <h1>Novo Ganho</h1>
+      </div>
+    
+      </div>
+      
+    </header>
+    
+    <main class="form-novo-ganho">
+    <div class="campo-grupo-simples">
+        <label for="nome-ganho">Nome do ganho</label>
+        <input type="text" id="nome-ganho" placeholder="Ex: Salário Mensal" class="input-nome">
+    </div>
+    
+    <div class="campo-grupo-vibrante">
+        <label>valor ganho</label>
+        <div class="input-container-vibrante">
+            <input type="text" placeholder="Digite valor">
+        </div>
+    </div>
+
+    <div class="campo-grupo-vibrante">
+        <label>data do ganho</label>
+        <div class="input-container-vibrante">
+            <input type="text" placeholder="Digite data">
+        </div>
+    </div>
+
+    <div class="campo-grupo-vibrante">
+        <label>categoria</label>
+        <div class="input-container-vibrante">
+            <select>
+                <option value="" disabled selected>Escolha uma categoria</option>
+                <option value="salario">Salário</option>
+                <option value="investimento">Investimento</option>
+            </select>
+        
+        </div>
+    </div>
+
+    <button type="submit" class="btn-salvar-final">
+        SALVAR GANHO
+    </button>
+</main>
+</body>
+</html>
+
