@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nova Senha - Gestão Financeira</title>
+    <link rel="stylesheet" href="login-cadastro.css" />
+  </head>
+  <body>
+    <div class="container-pai">
+      <div class="container-grafico-logo">
+        </div>
+
+      <h1>NOVA SENHA</h1>
+      
+      <p class="instrucao">
+        Crie uma senha forte para proteger sua conta.
+      </p>
+
+      <form action="login.html"> 
+        <div class="campo">
+          <label for="nova-senha">NOVA SENHA</label>
+          <input type="password" id="nova-senha" placeholder="Mínimo 8 caracteres" required />
+        </div>
+
+        <div class="campo">
+          <label for="conf-nova-senha">CONFIRMAR NOVA SENHA</label>
+          <input type="password" id="conf-nova-senha" placeholder="Repita a nova senha" required />
+        </div>
+
+        <button type="submit" class="button-entrar">REDEFINIR</button>
+      </form>
+    </div>
+  </body>
+</html>

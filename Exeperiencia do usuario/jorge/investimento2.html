@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investimento - Gestão Financeira</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="perfil.css">
+</head>
+<body>
+    <header class="perfil-header">
+        <div class="header-linha-topo">
+        <div class="icones-menu">
+            <!-- icone para voltar -->
+             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#10BE00">
+                <path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z"/>
+            </svg>
+        </div>
+      
+      <div class="boas-vindas">
+        <h1>Investimento</h1>
+      </div>
+    
+      </div>
+      
+    </header>
+    <main class="form-novo-investimento">
+    <div class="campo-grupo-simples">
+        <label for="nome-investimento">Nome do investimento</label>
+        <input type="text" id="nome-investimento" placeholder="Ex: Tesouro Direto 2029" class="input-nome">
+    </div>
+    
+    <div class="campo-grupo-vibrante">
+        <label>valor investido</label>
+        <div class="input-container-investimento">
+            <input type="text" placeholder="Digite valor">
+        </div>
+    </div>
+
+    <div class="campo-grupo-vibrante">
+        <label>data da aplicação</label>
+        <div class="input-container-investimento">
+            <input type="text" placeholder="Digite data">
+        </div>
+    </div>
+
+    <div class="campo-grupo-vibrante">
+        <label>tipo de ativo</label>
+        <div class="input-container-investimento">
+            <select>
+                <option value="" disabled selected>Escolha o tipo</option>
+                <option value="renda-fixa">Renda Fixa</option>
+                <option value="acoes">Ações / Variável</option>
+                <option value="cripto">Criptomoedas</option>
+            </select>
+        </div>
+    </div>
+
+    <button type="submit" class="btn-salvar-investimento">
+        SALVAR INVESTIMENTO
+    </button>
+</main>
+
+</body>
+</html>
+

@@ -1,0 +1,213 @@
+/* 1. Ajuste o header para distribuir o espaço entre os grupos */
+.perfil-header {
+  display: flex;
+  align-items: center;
+  background-color: #4846a7;
+  padding: 20px;
+  gap: 15px;
+  width: 100%;
+  box-sizing: border-box; /* Garante que o padding não quebre a largura */
+}
+
+/* 2. Cria uma classe para a div dos ícones */
+.icones-menu {
+  display: flex; /* Alinha os ícones lado a lado */
+  gap: 15px; /* Espaço entre um ícone e outro */
+  margin-left: auto; /*Empurra tudo para a direita */
+}
+
+/* 3. Garanta que os SVGs fiquem bonitinhos */
+.icones-menu svg {
+  cursor: pointer; /* Mostra que é clicável */
+}
+
+.foto-perfil {
+  width: 50px;
+  height: 50px;
+  background-color: #3533ae;
+  color: #12d200;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 18px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+
+.boas-vindas h1 {
+  color: beige;
+  font-size: 18px;
+  margin: 5;
+}
+
+.boas-vindas p {
+  font-size: 14px;
+  color: beige;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.secao-saldo {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.titulo-saldo {
+  font-size: 16px;
+  color: #555;
+  margin: 0 0 8px 0;
+  font-weight: normal;
+}
+
+.valor-saldo {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0;
+  color: #000;
+}
+
+.link-extrato {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.link-extrato:hover {
+  background-color: #f9f9f9;
+}
+
+.seta {
+  font-size: 20px;
+  color: #888;
+}
+
+.card-fluxo {
+  background-color: #eee;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.423);
+}
+
+.container-grafico {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 15px;
+  margin-top: 15px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.legenda {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.dot-despesa,
+.dot-receita {
+  width: 12px;
+  height: 12px;
+  border-radius: 30%;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.dot-despesa {
+  background-color: #ff5e57;
+}
+.dot-receita {
+  background-color: #00c853;
+}
+
+.container-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.container-cards .card-fluxo {
+  margin: 0;
+}
+
+.card-mais {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 120px;
+}
+
+.card-mais h3 {
+  margin: 0;
+  align-self: flex-start;
+}
+
+.container-cards .card-fluxo:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.container-cards .card-fluxo:active {
+  transform: translateY(0);
+}
+
+.simbolo-mais {
+  font-size: 40px;
+  margin: 0;
+  align-self: center;
+  color: #555;
+}
+
+.botao-configuracoes {
+  background-color: #eee;
+  border-radius: 12px;
+  padding: 15px 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+  border: none;
+  cursor: pointer;
+
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: lowercase;
+  color: #333;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.botao-configuracoes:hover {
+  background-color: #e0e0e0;
+  transform: translateY(-2px);
+}
+
+.botao-configuracoes:active {
+  transform: translateY(0);
+}
