@@ -1,0 +1,265 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #4846a7;
+  font-family: Arial, sans-serif;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container-pai {
+  width: 90%;
+  max-width: 350px;
+  text-align: center;
+  color: beige;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-grafico-logo {
+  width: 45%;
+  max-width: 400px;
+  min-width: 80px;
+
+  aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -20px;
+}
+
+h1 {
+  margin-bottom: 50px;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.campo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.campo-form label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #4544a1;
+  background-color: #4544a1;
+  color: beige;
+  border-radius: 8px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.423);
+}
+
+input:focus {
+  outline: none;
+  border: 2px solid #10be00;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: rgb(245, 245, 220)
+  -webkit-box-shadow 0 2px 5px rgba(0, 0, 0, 0.423);
+  -webkit-background-color: #4544a1;
+  transition:background-color 5000s ease-in-out 0s;
+}
+
+input::placeholder {
+  color: rgb(245, 245, 220, 0.5); 
+  font-style: italic;
+}
+
+.esqueceu-senha {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end; /* Alinha o link à direita */
+  margin-top: 5px;
+}
+
+.esqueceu-senha a {
+  color: beige;
+  font-size: 12px;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.3s, color 0.3s;
+}
+
+.esqueceu-senha a:hover {
+  opacity: 1;
+  color: #10BE00; /* Fica verde ao passar o mouse */
+  text-decoration: underline;
+}
+
+/* Estilização EXCLUSIVA do Botão ENTRAR */
+.button-entrar {
+  width: 100%;             
+  padding: 14px;           
+  margin-top: 25px;        
+  border: none;            
+  border-radius: 8px;      
+  background-color: #10BE00; /* Verde do logo */
+  color: #fff;             
+  font-weight: bold;       
+  font-size: 16px;
+  cursor: pointer;         
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
+  transition: background-color 0.3s ease, transform 0.1s;
+}
+
+/* Efeito ao passar o mouse apenas no botão verde */
+.button-entrar:hover {
+  background-color: #0d9c00; 
+}
+
+/* Efeito de clique apenas no botão verde */
+.button-entrar:active {
+  transform: scale(0.98);
+}
+
+.divisor {
+  display: flex;
+  align-items: center; /* Alinha o texto e as linhas na vertical */
+  width: 100%;
+  margin: 30px 0;      /* Espaço generoso em cima e embaixo */
+  color: beige;        /* Mesma cor que você usou no resto */
+  font-size: 12px;     /* Texto menor para não competir com o título */
+  opacity: 0.7;        /* Deixa um pouco mais discreto */
+}
+
+/* Cria a linha da esquerda */
+.divisor::before {
+  content: "";
+  flex: 1;             /* Faz a linha ocupar todo o espaço disponível */
+  height: 1px;
+  background: rgba(245, 245, 220, 0.3); /* Linha bege com transparência */
+  margin-right: 10px;  /* Afasta a linha do texto */
+}
+
+/* Cria a linha da direita */
+.divisor::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(245, 245, 220, 0.3);
+  margin-left: 10px;   /* Afasta a linha do texto */
+}
+
+
+/* Estilo geral para ambos (borda, tamanho, etc.) */
+.button-plataforma {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s, box-shadow 0.3s;
+  color: white; /* Texto branco para dar contraste nas cores */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Espaço para futuros ícones */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Cor EXCLUSIVA do Google (Vermelho) */
+.button-plataforma.google {
+  background-color: #DB4437; /* Vermelho Google */
+  border: 1px solid #c5372a;
+}
+
+.button-plataforma.google:hover {
+  background-color: #c5372a; /* Vermelho mais escuro no hover */
+}
+
+/* Cor EXCLUSIVA do Facebook (Azul) */
+.button-plataforma.facebook {
+  background-color: #4267B2; /* Azul Facebook */
+  border: 1px solid #365899;
+}
+
+.button-plataforma.facebook:hover {
+  background-color: #365899; /* Azul mais escuro no hover */
+}
+
+/* Efeito de clique em ambos */
+.buttontn-plataforma:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.link-cadastro {
+  margin-top: 30px;      /* Espaço para não ficar grudado nos botões */
+  font-size: 14px;       /* Tamanho de leitura confortável */
+  color: beige;          /* Cor do texto fixo igual ao resto da página */
+  text-align: center;
+}
+
+.link-cadastro a {
+  color: #10BE00;        /* O verde do seu logo */
+  text-decoration: none; /* Remove aquele sublinhado padrão feio */
+  font-weight: bold;     /* Deixa em negrito para destacar que é clicável */
+  margin-left: 5px;      /* Pequeno espaço entre o texto e o link */
+  transition: color 0.3s, text-decoration 0.3s;
+}
+
+/* Efeito quando o usuário passa o mouse no "Cadastre-se" */
+.link-cadastro a:hover {
+  color: #0d9c00;        /* Um verde um pouco mais escuro */
+  text-decoration: underline; /* O sublinhado aparece só no hover para dar feedback */
+}
+
+.recuperar-senha{
+  color: beige; 
+  margin-bottom: 30px; 
+  font-size: 14px; opacity: 0.8;
+  line-height: 1.5;
+}
+
+.container-codigo {
+  display: flex;
+  justify-content: center; /* Centraliza os itens no meio */
+  gap: 8px;               /* Espaço entre os quadradinhos */
+  width: 100%;
+  margin: 20px 0;
+}
+
+.input-codigo {
+  width: 45px !important;  /* Diminuímos de 60px para 45px para caberem os 6 */
+  height: 50px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0 !important;
+  background-color: #4544a1;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  color: beige;
+  box-sizing: border-box;
+}
+
+/* Efeito de foco quando clicar no quadradinho */
+.input-codigo:focus {
+  outline: none;
+  border: 2px solid #10be00;
+  background-color: #3533ae;
+}
