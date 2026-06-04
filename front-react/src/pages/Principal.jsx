@@ -1,11 +1,21 @@
-function Principal() {
+function Principal({
+  saldo,
+  receita,
+  despesas,
+  investimentos,
+  irParaExtrato,
+  irParaReceitas,
+  irParaDespesas,
+  irParaInvestimentos,
+  irParaConfiguracoes
+}) {
   const usuario = 'Kamila'
-  const saldo = 0
-  const receita = 0
-  const despesas = 0
-  const investimentos = 0
-  //variáveis JavaScript
-
+  function formatarValor(valor) {
+    return valor.toLocaleString('pt-BR', {
+      style: 'currency',
+      currency: 'BRL'
+    })
+  }
   return (
     <>
       <header className="perfil-header">
@@ -59,13 +69,13 @@ function Principal() {
       <main>
         <section className="secao-saldo">
           <h2 className="titulo-saldo">Saldo</h2>
-          <p className="valor-saldo">R$ {saldo.toFixed(2)}</p> //formata o número com duas casas decimais.
+          <p className="valor-saldo">{formatarValor(saldo)}</p>
         </section>
 
-        <a href="#" className="link-extrato">
+        <button className="link-extrato" onClick={irParaExtrato}>
           <span>Extrato</span>
           <span className="seta">&gt;</span>
-        </a>
+        </button>
 
         <section className="card-fluxo">
           <h3>Fluxo de caixa</h3>
@@ -85,20 +95,20 @@ function Principal() {
         </section>
 
         <section className="container-cards">
-          <div className="card-fluxo">
+          <button className="card-fluxo card-botao" onClick={irParaReceitas}>
             <h3>Receita</h3>
-            <p className="valor-card">R$ 00,00</p>
-          </div>
+            <p className="valor-card">{formatarValor(receita)}</p>
+          </button>
 
-          <div className="card-fluxo">
+          <button className="card-fluxo card-botao" onClick={irParaDespesas}>
             <h3>Despesas</h3>
-            <p className="valor-card">R$ 00,00</p>
-          </div>
+            <p className="valor-card">{formatarValor(despesas)}</p>
+          </button>
 
-          <div className="card-fluxo">
+          <button className="card-fluxo card-botao" onClick={irParaInvestimentos}>
             <h3>Investimentos</h3>
-            <p className="valor-card">R$ 00,00</p>
-          </div>
+            <p className="valor-card">{formatarValor(investimentos)}</p>
+          </button>
 
           <div className="card-fluxo card-mais">
             <h3>Mais</h3>
@@ -106,7 +116,7 @@ function Principal() {
           </div>
         </section>
 
-        <button className="botao-configuracoes">
+        <button className="botao-configuracoes" onClick={irParaConfiguracoes}>
           configurações
         </button>
       </main>
