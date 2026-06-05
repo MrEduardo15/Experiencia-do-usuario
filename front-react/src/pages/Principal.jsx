@@ -8,7 +8,8 @@ function Principal({
   irParaDespesas,
   irParaInvestimentos,
   irParaConfiguracoes,
-  irParaCategorias
+  irParaCategorias,
+  irParaTabelaGastos
 }) {
   const usuario = 'Kamila'
 
@@ -153,7 +154,10 @@ function Principal({
               <p className="valor-card">{formatarValor(investimentos)}</p>
             </button>
 
-            <button className="card-fluxo card-botao card-centralizado" onClick={irParaExtrato}>
+            <button
+              className="card-fluxo card-botao card-centralizado"
+              onClick={irParaTabelaGastos}
+            >
               <h3>Tabela de gastos</h3>
             </button>
 
@@ -167,7 +171,7 @@ function Principal({
             <button className="card-fluxo card-botao card-centralizado">
               <h3>Conselhos financeiros</h3>
             </button>
-            
+
           </section>
         </section>
       </main>

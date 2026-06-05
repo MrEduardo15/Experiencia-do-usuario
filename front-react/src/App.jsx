@@ -8,6 +8,7 @@ import Investimentos from './pages/Investimentos.jsx'
 import Configuracoes from './pages/Configuracoes.jsx'
 import Categorias from './pages/Categorias.jsx'
 import CategoriaDetalhes from './pages/CategoriaDetalhes.jsx'
+import TabelaGastos from './pages/TabelaGastos.jsx'
 
 function App() {
   const [pagina, setPagina] = useState('principal')
@@ -49,6 +50,46 @@ function App() {
       valor: 200,
       data: '2026-05-19',
       categoria: 'Shopping'
+    },
+    {
+      id: 4,
+      tipo: 'despesa',
+      descricao: 'Fast-food',
+      valor: 80,
+      data: '2026-03-05',
+      categoria: 'Fast-food'
+    },
+    {
+      id: 5,
+      tipo: 'despesa',
+      descricao: 'Aluguel',
+      valor: 900,
+      data: '2026-03-10',
+      categoria: 'Aluguel'
+    },
+    {
+      id: 6,
+      tipo: 'despesa',
+      descricao: 'Faculdade',
+      valor: 600,
+      data: '2026-03-15',
+      categoria: 'Faculdade'
+    },
+    {
+      id: 7,
+      tipo: 'despesa',
+      descricao: 'Shopping',
+      valor: 150,
+      data: '2026-02-08',
+      categoria: 'Shopping'
+    },
+    {
+      id: 8,
+      tipo: 'despesa',
+      descricao: 'Conta de luz',
+      valor: 220,
+      data: '2026-02-12',
+      categoria: 'Conta de luz'
     }
   ])
 
@@ -124,6 +165,7 @@ function App() {
           irParaInvestimentos={() => setPagina('investimentos')}
           irParaConfiguracoes={() => setPagina('configuracoes')}
           irParaCategorias={() => setPagina('categorias')}
+          irParaTabelaGastos={() => setPagina('tabelaGastos')}
         />
       )}
 
@@ -175,6 +217,13 @@ function App() {
         <CategoriaDetalhes
           voltar={() => setPagina('categorias')}
           categoria={categoriaSelecionada}
+          movimentacoes={movimentacoes}
+        />
+      )}
+
+      {pagina === 'tabelaGastos' && (
+        <TabelaGastos
+          voltar={irParaPrincipal}
           movimentacoes={movimentacoes}
         />
       )}
