@@ -20,10 +20,10 @@ import Mensagens from './pages/Mensagens.jsx'
 function App() {
   const [pagina, setPagina] = useState('login')
   const [usuario, setUsuario] = useState({
-  nome: 'Kamila Dantas Luongo',
-  telefone: '(11) 91845-4568',
-  email: 'kamila@gmail.com',
-  dataNascimento: '05/12/1980'
+    nome: 'Kamila Dantas Luongo',
+    telefone: '(11) 91845-4568',
+    email: 'kamila@gmail.com',
+    dataNascimento: '05/12/1980'
   })
 
   const [categorias, setCategorias] = useState([
@@ -180,6 +180,7 @@ function App() {
     alert('Cadastro realizado com sucesso!')
     setPagina('login')
   }
+
   return (
     <>
       {pagina === 'principal' && (
@@ -250,7 +251,6 @@ function App() {
           adicionarCategoria={adicionarCategoria}
           abrirCategoria={abrirCategoria}
           usuario={usuario}
-
           />
       )}
 

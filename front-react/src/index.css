@@ -147,47 +147,6 @@ body {
   background-color: #00c853;
 }
 
-.container-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 15px;
-  padding: 20px;
-  cursor: pointer;
-}
-
-.container-cards .card-fluxo {
-  margin: 0;
-}
-
-.card-mais {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 120px;
-}
-
-.card-mais h3 {
-  margin: 0;
-  align-self: flex-start;
-}
-
-.container-cards .card-fluxo:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-}
-
-.container-cards .card-fluxo:active {
-  transform: translateY(0);
-}
-
-.simbolo-mais {
-  font-size: 40px;
-  margin: 0;
-  align-self: center;
-  color: #555;
-}
-
 .botao-configuracoes {
   background-color: #eee;
   border-radius: 12px;
@@ -556,7 +515,7 @@ body {
     font-size: 9px;
   }
 }
-
+ /* Estilos para a página de configurações */
 .pagina-configuracoes {
   padding: 30px 20px;
   max-width: 850px;
@@ -654,6 +613,7 @@ body {
   margin: 8px 0 0;
 }
 
+/* Estilos para a página de perfil */
 .botao-perfil {
   background: none;
   border: none;
@@ -713,6 +673,7 @@ body {
   }
 }
 
+/* Estilos para a página de conselhos */
 .pagina-conselhos {
   padding: 32px 20px;
 }
@@ -793,6 +754,7 @@ body {
   align-items: center;
 }
 
+ /* Estilos para a página de notificações */
 .pagina-notificacoes {
   padding: 32px 20px;
   max-width: 900px;
@@ -894,6 +856,7 @@ body {
   }
 }
 
+/* Estilos para a página de pesquisa */
 .header-pesquisa {
   display: flex;
   align-items: center;
@@ -987,6 +950,8 @@ body {
   }
 }
 
+
+/** Estilos para as páginas de login e cadastro */
 .pagina-login {
   min-height: 100vh;
   background-color: #4846a7;
@@ -1241,7 +1206,7 @@ body {
   font-size: 24px;
 }
 
-.page-mensagens {
+.pagina-mensagens {
   padding: 32px 20px;
   max-width: 900px;
   margin: 0 auto;
