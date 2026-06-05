@@ -11,10 +11,14 @@ import CategoriaDetalhes from './pages/CategoriaDetalhes.jsx'
 import TabelaGastos from './pages/TabelaGastos.jsx'
 import Perfil from './pages/Perfil.jsx'
 import ConselhosFinanceiros from './pages/ConselhosFinanceiros.jsx'
+import Notificacoes from './pages/Notificacoes.jsx'
+import Pesquisa from './pages/Pesquisa.jsx'
+import Login from './pages/Login.jsx'
+import Cadastro from './pages/Cadastro.jsx'
+import Mensagens from './pages/Mensagens.jsx'
 
 function App() {
-  const [pagina, setPagina] = useState('principal')
-
+  const [pagina, setPagina] = useState('login')
   const [usuario, setUsuario] = useState({
   nome: 'Kamila Dantas Luongo',
   telefone: '(11) 91845-4568',
@@ -160,6 +164,22 @@ function App() {
     setPagina('principal')
   }
 
+  function entrarNoSistema() {
+    setPagina('principal')
+  }
+
+  function cadastrarUsuario(dadosCadastro) {
+    setUsuario({
+      ...usuario,
+      nome: dadosCadastro.nome,
+      telefone: dadosCadastro.telefone,
+      email: dadosCadastro.email,
+      dataNascimento: dadosCadastro.dataNascimento
+    })
+
+    alert('Cadastro realizado com sucesso!')
+    setPagina('login')
+  }
   return (
     <>
       {pagina === 'principal' && (
@@ -178,6 +198,9 @@ function App() {
           irParaTabelaGastos={() => setPagina('tabelaGastos')}
           irParaPerfil={() => setPagina('perfil')}
           irParaConselhos={() => setPagina('conselhos')}
+          irParaNotificacoes={() => setPagina('notificacoes')}
+          irParaPesquisa={() => setPagina('pesquisa')}
+          irParaMensagens={() => setPagina('mensagens')}
         />
       )}
 
@@ -256,6 +279,43 @@ function App() {
 
       {pagina === 'conselhos' && (
         <ConselhosFinanceiros
+          voltar={irParaPrincipal}
+          usuario={usuario}
+        />
+      )}
+
+      {pagina === 'notificacoes' && (
+        <Notificacoes
+          voltar={irParaPrincipal}
+          usuario={usuario}
+        />
+      )}
+
+      {pagina === 'pesquisa' && (
+        <Pesquisa
+          voltar={irParaPrincipal}
+          usuario={usuario}
+          movimentacoes={movimentacoes}
+          categorias={categorias}
+        />
+      )}
+
+      {pagina === 'login' && (
+        <Login
+          irParaCadastro={() => setPagina('cadastro')}
+          entrar={entrarNoSistema}
+        />
+      )}
+
+      {pagina === 'cadastro' && (
+        <Cadastro
+          voltarLogin={() => setPagina('login')}
+          cadastrarUsuario={cadastrarUsuario}
+        />
+      )}
+
+      {pagina === 'mensagens' && (
+        <Mensagens
           voltar={irParaPrincipal}
           usuario={usuario}
         />
