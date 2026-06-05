@@ -39,7 +39,7 @@ function Extrato({ voltar, movimentacoes }) {
             <div className="item-extrato" key={item.id}>
               <div>
                 <strong>{item.descricao}</strong>
-                <p>{item.tipo} - {item.data}</p>
+                <p>{item.tipo} - {item.categoria || 'Sem categoria'} - {item.data}</p>
               </div>
 
               <span className={pegarClasseValor(item.tipo)}>

@@ -7,7 +7,8 @@ function Principal({
   irParaReceitas,
   irParaDespesas,
   irParaInvestimentos,
-  irParaConfiguracoes
+  irParaConfiguracoes,
+  irParaCategorias
 }) {
   const usuario = 'Kamila'
 
@@ -156,13 +157,17 @@ function Principal({
               <h3>Tabela de gastos</h3>
             </button>
 
-            <button className="card-fluxo card-botao card-centralizado">
+            <button
+              className="card-fluxo card-botao card-centralizado"
+              onClick={irParaCategorias}
+            >
               <h3>Categorias</h3>
             </button>
 
             <button className="card-fluxo card-botao card-centralizado">
               <h3>Conselhos financeiros</h3>
             </button>
+            
           </section>
         </section>
       </main>

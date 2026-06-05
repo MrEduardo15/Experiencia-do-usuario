@@ -1,9 +1,10 @@
 import { useState } from 'react'
 
-function Despesas({ voltar, adicionarMovimentacao }) {
+function Despesas({ voltar, categorias, adicionarMovimentacao }) {
   const [descricao, setDescricao] = useState('')
   const [valor, setValor] = useState('')
   const [data, setData] = useState('')
+  const [categoria, setCategoria] = useState('')
 
   function salvarDespesa(event) {
     event.preventDefault()
@@ -12,7 +13,8 @@ function Despesas({ voltar, adicionarMovimentacao }) {
       tipo: 'despesa',
       descricao,
       valor: Number(valor),
-      data
+      data,
+      categoria
     })
   }
 
@@ -59,6 +61,21 @@ function Despesas({ voltar, adicionarMovimentacao }) {
               onChange={(event) => setData(event.target.value)}
               required
             />
+
+            <label>Categoria</label>
+            <select
+            value={categoria}
+            onChange={(event) => setCategoria(event.target.value)}
+            required
+            >
+            <option value="">Selecione uma categoria</option>
+
+            {categorias.map((item) => (
+                <option key={item} value={item}>
+                {item}
+                </option>
+            ))}
+            </select>
 
             <button type="submit" className="botao-configuracoes">
               Salvar despesa
