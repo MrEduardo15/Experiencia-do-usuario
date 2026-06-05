@@ -1,4 +1,5 @@
 function Principal({
+  usuario,
   saldo,
   receita,
   despesas,
@@ -9,9 +10,19 @@ function Principal({
   irParaInvestimentos,
   irParaConfiguracoes,
   irParaCategorias,
-  irParaTabelaGastos
+  irParaTabelaGastos,
+  irParaPerfil,
+  irParaConselhos
 }) {
-  const usuario = 'Kamila'
+
+  function pegarIniciais(nome) {
+  return nome
+    .split(' ')
+    .map((parte) => parte.charAt(0))
+    .join('')
+    .substring(0, 2)
+    .toUpperCase()
+  }
 
   function formatarValor(valor) {
     return valor.toLocaleString('pt-BR', {
@@ -35,14 +46,18 @@ function Principal({
   return (
     <>
       <header className="perfil-header">
-        <a href="#" style={{ textDecoration: 'none' }}>
+        <button
+          className="botao-perfil"
+          onClick={irParaPerfil}
+          type="button"
+        >
           <div className="foto-perfil">
-            <span>KA</span>
+            <span>{pegarIniciais(usuario.nome)}</span>
           </div>
-        </a>
+        </button>
 
         <div className="boas-vindas">
-          <h1>{usuario}</h1>
+          <h1>{usuario.nome}</h1>
           <p>Olá, que bom te ver por aqui!</p>
         </div>
 
@@ -134,7 +149,7 @@ function Principal({
             </section>
 
             <button className="botao-configuracoes" onClick={irParaConfiguracoes}>
-              configurações
+              dados pessoais
             </button>
           </div>
 
@@ -168,7 +183,10 @@ function Principal({
               <h3>Categorias</h3>
             </button>
 
-            <button className="card-fluxo card-botao card-centralizado">
+            <button
+              className="card-fluxo card-botao card-centralizado"
+              onClick={irParaConselhos}
+            >
               <h3>Conselhos financeiros</h3>
             </button>
 

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function Categorias({ voltar, categorias, adicionarCategoria, abrirCategoria }) {
+function Categorias({ voltar, categorias, adicionarCategoria, abrirCategoria, usuario }) {
   const [novaCategoria, setNovaCategoria] = useState('')
 
   function salvarCategoria(event) {
@@ -18,7 +18,7 @@ function Categorias({ voltar, categorias, adicionarCategoria, abrirCategoria }) 
         </button>
 
         <div className="boas-vindas">
-          <h1>Kamila</h1>
+          <h1>{usuario.nome}</h1>
           <p>categorias</p>
         </div>
 

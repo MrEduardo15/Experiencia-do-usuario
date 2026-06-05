@@ -1,4 +1,4 @@
-function TabelaGastos({ voltar, movimentacoes }) {
+function TabelaGastos({ voltar, usuario, movimentacoes }) {
   const despesas = movimentacoes.filter((item) => item.tipo === 'despesa')
 
   const nomesMeses = [
@@ -54,7 +54,7 @@ function TabelaGastos({ voltar, movimentacoes }) {
         </button>
 
         <div className="boas-vindas">
-          <h1>Kamila</h1>
+          <h1>{usuario.nome}</h1>
           <p>tabela de gastos</p>
         </div>
 
@@ -154,10 +154,6 @@ function TabelaGastos({ voltar, movimentacoes }) {
             )
           })
         )}
-
-        <button className="botao-flutuante-gasto">
-          +
-        </button>
       </main>
     </>
   )

@@ -9,9 +9,18 @@ import Configuracoes from './pages/Configuracoes.jsx'
 import Categorias from './pages/Categorias.jsx'
 import CategoriaDetalhes from './pages/CategoriaDetalhes.jsx'
 import TabelaGastos from './pages/TabelaGastos.jsx'
+import Perfil from './pages/Perfil.jsx'
+import ConselhosFinanceiros from './pages/ConselhosFinanceiros.jsx'
 
 function App() {
   const [pagina, setPagina] = useState('principal')
+
+  const [usuario, setUsuario] = useState({
+  nome: 'Kamila Dantas Luongo',
+  telefone: '(11) 91845-4568',
+  email: 'kamila@gmail.com',
+  dataNascimento: '05/12/1980'
+  })
 
   const [categorias, setCategorias] = useState([
     'Aluguel',
@@ -155,6 +164,7 @@ function App() {
     <>
       {pagina === 'principal' && (
         <Principal
+          usuario={usuario}
           saldo={saldo}
           receita={totalReceitas}
           despesas={totalDespesas}
@@ -166,6 +176,8 @@ function App() {
           irParaConfiguracoes={() => setPagina('configuracoes')}
           irParaCategorias={() => setPagina('categorias')}
           irParaTabelaGastos={() => setPagina('tabelaGastos')}
+          irParaPerfil={() => setPagina('perfil')}
+          irParaConselhos={() => setPagina('conselhos')}
         />
       )}
 
@@ -201,7 +213,11 @@ function App() {
       )}
 
       {pagina === 'configuracoes' && (
-        <Configuracoes voltar={irParaPrincipal} />
+        <Configuracoes
+          voltar={irParaPrincipal}
+          usuario={usuario}
+          setUsuario={setUsuario}
+        />
       )}
 
       {pagina === 'categorias' && (
@@ -210,7 +226,9 @@ function App() {
           categorias={categorias}
           adicionarCategoria={adicionarCategoria}
           abrirCategoria={abrirCategoria}
-        />
+          usuario={usuario}
+
+          />
       )}
 
       {pagina === 'categoriaDetalhes' && (
@@ -224,7 +242,22 @@ function App() {
       {pagina === 'tabelaGastos' && (
         <TabelaGastos
           voltar={irParaPrincipal}
+          usuario={usuario}
           movimentacoes={movimentacoes}
+        />
+      )}
+
+      {pagina === 'perfil' && (
+        <Perfil
+          voltar={irParaPrincipal}
+          usuario={usuario}
+        />
+      )}
+
+      {pagina === 'conselhos' && (
+        <ConselhosFinanceiros
+          voltar={irParaPrincipal}
+          usuario={usuario}
         />
       )}
     </>
