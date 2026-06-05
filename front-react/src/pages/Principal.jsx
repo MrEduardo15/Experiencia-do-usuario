@@ -10,12 +10,26 @@ function Principal({
   irParaConfiguracoes
 }) {
   const usuario = 'Kamila'
+
   function formatarValor(valor) {
     return valor.toLocaleString('pt-BR', {
       style: 'currency',
       currency: 'BRL'
     })
   }
+
+  function calcularAltura(valor) {
+    const maiorValor = Math.max(receita, despesas, investimentos)
+
+    if (maiorValor === 0) {
+      return '10px'
+    }
+
+    const altura = (valor / maiorValor) * 130
+
+    return `${altura}px`
+  }
+
   return (
     <>
       <header className="perfil-header">
@@ -26,7 +40,7 @@ function Principal({
         </a>
 
         <div className="boas-vindas">
-            <h1>{usuario}</h1>
+          <h1>{usuario}</h1>
           <p>Olá, que bom te ver por aqui!</p>
         </div>
 
@@ -77,48 +91,80 @@ function Principal({
           <span className="seta">&gt;</span>
         </button>
 
-        <section className="card-fluxo">
-          <h3>Fluxo de caixa</h3>
+        <section className="area-dashboard">
+          <div className="coluna-grafico">
+            <section className="card-fluxo">
+              <h3>Fluxo de caixa</h3>
 
-          <div className="container-grafico">
-            [Gráfico aqui]
+              <div className="container-grafico">
+                <div
+                  className="barra-grafico barra-despesa"
+                  style={{ height: calcularAltura(despesas) }}
+                  title={`Despesas: ${formatarValor(despesas)}`}
+                ></div>
+
+                <div
+                  className="barra-grafico barra-receita"
+                  style={{ height: calcularAltura(receita) }}
+                  title={`Receitas: ${formatarValor(receita)}`}
+                ></div>
+
+                <div
+                  className="barra-grafico barra-investimento"
+                  style={{ height: calcularAltura(investimentos) }}
+                  title={`Investimentos: ${formatarValor(investimentos)}`}
+                ></div>
+              </div>
+
+              <div className="legenda">
+                <span>
+                  <i className="dot-despesa"></i> Despesas
+                </span>
+
+                <span>
+                  <i className="dot-receita"></i> Receitas
+                </span>
+
+                <span>
+                  <i className="dot-investimento"></i> Investimentos
+                </span>
+              </div>
+            </section>
+
+            <button className="botao-configuracoes" onClick={irParaConfiguracoes}>
+              configurações
+            </button>
           </div>
 
-          <div className="legenda">
-            <span>
-              <i className="dot-despesa"></i> Despesas
-            </span>
-            <span>
-              <i className="dot-receita"></i> Receitas
-            </span>
-          </div>
+          <section className="grade-menu">
+            <button className="card-fluxo card-botao" onClick={irParaReceitas}>
+              <h3>Receita</h3>
+              <p className="valor-card">{formatarValor(receita)}</p>
+            </button>
+
+            <button className="card-fluxo card-botao" onClick={irParaDespesas}>
+              <h3>Despesas</h3>
+              <p className="valor-card">{formatarValor(despesas)}</p>
+            </button>
+
+            <button className="card-fluxo card-botao" onClick={irParaInvestimentos}>
+              <h3>Investimentos</h3>
+              <p className="valor-card">{formatarValor(investimentos)}</p>
+            </button>
+
+            <button className="card-fluxo card-botao card-centralizado" onClick={irParaExtrato}>
+              <h3>Tabela de gastos</h3>
+            </button>
+
+            <button className="card-fluxo card-botao card-centralizado">
+              <h3>Categorias</h3>
+            </button>
+
+            <button className="card-fluxo card-botao card-centralizado">
+              <h3>Conselhos financeiros</h3>
+            </button>
+          </section>
         </section>
-
-        <section className="container-cards">
-          <button className="card-fluxo card-botao" onClick={irParaReceitas}>
-            <h3>Receita</h3>
-            <p className="valor-card">{formatarValor(receita)}</p>
-          </button>
-
-          <button className="card-fluxo card-botao" onClick={irParaDespesas}>
-            <h3>Despesas</h3>
-            <p className="valor-card">{formatarValor(despesas)}</p>
-          </button>
-
-          <button className="card-fluxo card-botao" onClick={irParaInvestimentos}>
-            <h3>Investimentos</h3>
-            <p className="valor-card">{formatarValor(investimentos)}</p>
-          </button>
-
-          <div className="card-fluxo card-mais">
-            <h3>Mais</h3>
-            <p className="simbolo-mais">+</p>
-          </div>
-        </section>
-
-        <button className="botao-configuracoes" onClick={irParaConfiguracoes}>
-          configurações
-        </button>
       </main>
     </>
   )

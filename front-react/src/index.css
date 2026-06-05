@@ -285,3 +285,98 @@ body {
   cursor: pointer;
   font-family: inherit;
 }
+.barra-grafico {
+  width: 45px;
+  border-radius: 8px 8px 0 0;
+}
+
+.barra-despesa {
+  background-color: #ff5e57;
+}
+
+.barra-receita {
+  background-color: #00c853;
+}
+
+.barra-investimento {
+  background-color: #4846a7;
+}
+
+.dot-investimento {
+  width: 12px;
+  height: 12px;
+  border-radius: 30%;
+  display: inline-block;
+  margin-right: 5px;
+  background-color: #4846a7;
+}
+
+.area-dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 20px;
+  padding: 20px;
+  align-items: start;
+}
+
+.coluna-grafico {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.coluna-grafico .card-fluxo {
+  margin: 0;
+}
+
+.grade-menu {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.grade-menu .card-fluxo {
+  margin: 0;
+  min-height: 100px;
+}
+
+.card-botao {
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.card-centralizado {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+}
+
+.card-centralizado h3 {
+  margin: 0;
+}
+
+.valor-card {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0 0 0;
+}
+
+@media (max-width: 900px) {
+  .area-dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .grade-menu {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grade-menu {
+    grid-template-columns: 1fr;
+  }
+}
