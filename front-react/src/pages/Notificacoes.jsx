@@ -1,4 +1,5 @@
 function Notificacoes({ voltar, usuario }) {
+  // Lista de notificações exibidas para o usuário
   const notificacoes = [
     {
       id: 1,
@@ -39,15 +40,20 @@ function Notificacoes({ voltar, usuario }) {
 
   return (
     <>
+      {/* Cabeçalho da página */}
       <header className="perfil-header">
+
+        {/* Botão para retornar à tela anterior */}
         <button className="botao-voltar" onClick={voltar}>
           &lt;
         </button>
 
+        {/* Avatar do usuário exibindo a primeira letra do nome */}
         <div className="foto-perfil">
           <span>{usuario.nome.charAt(0).toUpperCase()}</span>
         </div>
 
+        {/* Informações do usuário */}
         <div className="boas-vindas">
           <h1>{usuario.nome.split(' ')[0]}</h1>
           <p>notificações</p>
@@ -55,19 +61,28 @@ function Notificacoes({ voltar, usuario }) {
       </header>
 
       <main className="pagina-notificacoes">
+
+        {/* Título e descrição da página */}
         <section className="titulo-notificacoes">
           <h2>Notificações</h2>
           <p>Atualizações, avisos e novidades sobre sua conta.</p>
         </section>
 
+        {/* Lista de notificações */}
         <section className="lista-notificacoes">
+
+          {/* Percorre o vetor de notificações e cria um card para cada item */}
           {notificacoes.map((notificacao) => (
             <article className="card-notificacao" key={notificacao.id}>
+
+              {/* Ícone visual da notificação */}
               <div className="icone-notificacao">
                 !
               </div>
 
               <div className="conteudo-notificacao">
+
+                {/* Exibe o tipo e a data da notificação */}
                 <div className="topo-notificacao">
                   <span className="tipo-notificacao">
                     {notificacao.tipo}
@@ -78,8 +93,10 @@ function Notificacoes({ voltar, usuario }) {
                   </span>
                 </div>
 
+                {/* Título da notificação */}
                 <h3>{notificacao.titulo}</h3>
 
+                {/* Descrição detalhada da notificação */}
                 <p>{notificacao.descricao}</p>
               </div>
             </article>

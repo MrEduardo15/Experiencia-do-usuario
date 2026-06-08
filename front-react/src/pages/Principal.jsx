@@ -18,15 +18,18 @@ function Principal({
   irParaMensagens
 }) {
 
+  // Função que gera as iniciais do nome do usuário
+  // Exemplo: "João Silva" -> "JS"
   function pegarIniciais(nome) {
-  return nome
-    .split(' ')
-    .map((parte) => parte.charAt(0))
-    .join('')
-    .substring(0, 2)
-    .toUpperCase()
+    return nome
+      .split(' ')
+      .map((parte) => parte.charAt(0))
+      .join('')
+      .substring(0, 2)
+      .toUpperCase()
   }
 
+  // Função que formata valores monetários para o padrão brasileiro
   function formatarValor(valor) {
     return valor.toLocaleString('pt-BR', {
       style: 'currency',
@@ -34,9 +37,11 @@ function Principal({
     })
   }
 
+  // Calcula a altura das barras do gráfico proporcionalmente ao maior valor
   function calcularAltura(valor) {
     const maiorValor = Math.max(receita, despesas, investimentos)
 
+    // Evita divisão por zero quando não existem valores
     if (maiorValor === 0) {
       return '10px'
     }
@@ -48,7 +53,10 @@ function Principal({
 
   return (
     <>
+      {/* Cabeçalho principal da aplicação */}
       <header className="perfil-header">
+
+        {/* Botão para acessar o perfil do usuário */}
         <button
           className="botao-perfil"
           onClick={irParaPerfil}
@@ -59,14 +67,17 @@ function Principal({
           </div>
         </button>
 
+        {/* Mensagem de boas-vindas */}
         <div className="boas-vindas">
           <h1>{usuario.nome}</h1>
           <p>Olá, que bom te ver por aqui!</p>
         </div>
 
+        {/* Grupo de ícones de acesso rápido */}
         <div className="icones-menu">
-          {/* Ícone da lupa */}
-         <button
+
+          {/* Botão de pesquisa */}
+          <button
             className="botao-icone-header"
             onClick={irParaPesquisa}
             type="button"
@@ -83,8 +94,8 @@ function Principal({
             </svg>
           </button>
 
-          {/* Ícone do sino */}
-         <button
+          {/* Botão de notificações */}
+          <button
             className="botao-icone-header"
             onClick={irParaNotificacoes}
             type="button"
@@ -101,7 +112,7 @@ function Principal({
             </svg>
           </button>
 
-          {/* Ícone do chat */}
+          {/* Botão de mensagens */}
           <button
             className="botao-icone-header"
             onClick={irParaMensagens}
@@ -122,34 +133,45 @@ function Principal({
       </header>
 
       <main>
+
+        {/* Área que exibe o saldo total */}
         <section className="secao-saldo">
           <h2 className="titulo-saldo">Saldo</h2>
           <p className="valor-saldo">{formatarValor(saldo)}</p>
         </section>
 
+        {/* Link para a tela de extrato */}
         <button className="link-extrato" onClick={irParaExtrato}>
           <span>Extrato</span>
           <span className="seta">&gt;</span>
         </button>
 
         <section className="area-dashboard">
+
+          {/* Coluna lateral contendo gráfico e configurações */}
           <div className="coluna-grafico">
+
+            {/* Card do gráfico de fluxo de caixa */}
             <section className="card-fluxo">
               <h3>Fluxo de caixa</h3>
 
               <div className="container-grafico">
+
+                {/* Barra de despesas */}
                 <div
                   className="barra-grafico barra-despesa"
                   style={{ height: calcularAltura(despesas) }}
                   title={`Despesas: ${formatarValor(despesas)}`}
                 ></div>
 
+                {/* Barra de receitas */}
                 <div
                   className="barra-grafico barra-receita"
                   style={{ height: calcularAltura(receita) }}
                   title={`Receitas: ${formatarValor(receita)}`}
                 ></div>
 
+                {/* Barra de investimentos */}
                 <div
                   className="barra-grafico barra-investimento"
                   style={{ height: calcularAltura(investimentos) }}
@@ -157,6 +179,7 @@ function Principal({
                 ></div>
               </div>
 
+              {/* Legenda do gráfico */}
               <div className="legenda">
                 <span>
                   <i className="dot-despesa"></i> Despesas
@@ -172,27 +195,34 @@ function Principal({
               </div>
             </section>
 
+            {/* Botão para acessar configurações/dados pessoais */}
             <button className="botao-configuracoes" onClick={irParaConfiguracoes}>
               dados pessoais
             </button>
           </div>
 
+          {/* Grade principal de funcionalidades */}
           <section className="grade-menu">
+
+            {/* Card de receitas */}
             <button className="card-fluxo card-botao" onClick={irParaReceitas}>
               <h3>Receita</h3>
               <p className="valor-card">{formatarValor(receita)}</p>
             </button>
 
+            {/* Card de despesas */}
             <button className="card-fluxo card-botao" onClick={irParaDespesas}>
               <h3>Despesas</h3>
               <p className="valor-card">{formatarValor(despesas)}</p>
             </button>
 
+            {/* Card de investimentos */}
             <button className="card-fluxo card-botao" onClick={irParaInvestimentos}>
               <h3>Investimentos</h3>
               <p className="valor-card">{formatarValor(investimentos)}</p>
             </button>
 
+            {/* Acesso à tabela de gastos */}
             <button
               className="card-fluxo card-botao card-centralizado"
               onClick={irParaTabelaGastos}
@@ -200,6 +230,7 @@ function Principal({
               <h3>Tabela de gastos</h3>
             </button>
 
+            {/* Acesso às categorias */}
             <button
               className="card-fluxo card-botao card-centralizado"
               onClick={irParaCategorias}
@@ -207,6 +238,7 @@ function Principal({
               <h3>Categorias</h3>
             </button>
 
+            {/* Acesso aos conselhos financeiros */}
             <button
               className="card-fluxo card-botao card-centralizado"
               onClick={irParaConselhos}
