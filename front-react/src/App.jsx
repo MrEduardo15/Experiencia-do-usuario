@@ -36,7 +36,10 @@ function App() {
     'Shopping',
     'Conta de luz',
     'Cosméticos',
-    'Conta de água'
+    'Conta de água',
+    'Salário',
+    'Freelance',
+    'Investimentos',
   ])
 
   const [movimentacoes, setMovimentacoes] = useState([
