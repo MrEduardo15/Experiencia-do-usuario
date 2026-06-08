@@ -1,11 +1,14 @@
 import { useState } from 'react'
 
+// Componente para registrar investimentos, com formulário para dados e envio.
 function Investimentos({ voltar, categorias, adicionarMovimentacao }) {
   const [categoria, setCategoria] = useState('')
   const [descricao, setDescricao] = useState('')
   const [valor, setValor] = useState('')
   const [data, setData] = useState('')
 
+  // Envia a nova movimentação como investimento para o estado principal.
+  // Converte o valor para número antes do envio.
   function salvarInvestimento(event) {
     event.preventDefault()
 

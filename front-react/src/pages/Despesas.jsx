@@ -1,11 +1,13 @@
 import { useState } from 'react'
 
+// Componente para cadastro de despesas, exibindo o formulário e gerenciando seus campos.
 function Despesas({ voltar, categorias, adicionarMovimentacao }) {
   const [descricao, setDescricao] = useState('')
   const [valor, setValor] = useState('')
   const [data, setData] = useState('')
   const [categoria, setCategoria] = useState('')
 
+  // Envia os dados da despesa para o handler principal e converte o valor para número.
   function salvarDespesa(event) {
     event.preventDefault()
 

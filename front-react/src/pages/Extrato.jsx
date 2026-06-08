@@ -1,3 +1,4 @@
+// Componente que mostra o extrato das movimentações financeiras do usuário.
 function Extrato({ voltar, movimentacoes }) {
   function formatarValor(valor) {
     return valor.toLocaleString('pt-BR', {
@@ -6,6 +7,7 @@ function Extrato({ voltar, movimentacoes }) {
     })
   }
 
+  // Define a classe CSS do valor com base no tipo de movimentação para exibir cores diferentes.
   function pegarClasseValor(tipo) {
     if (tipo === 'receita') {
       return 'valor-positivo'

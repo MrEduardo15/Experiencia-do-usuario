@@ -1,8 +1,10 @@
+// Componente que exibe detalhes de uma categoria e lista as movimentações filtradas.
 function CategoriaDetalhes({ voltar, categoria, movimentacoes }) {
   const movimentacoesFiltradas = movimentacoes.filter(
     (item) => item.categoria === categoria
   )
 
+  // Formata um valor numérico como moeda brasileira (R$).
   function formatarValor(valor) {
     return valor.toLocaleString('pt-BR', {
       style: 'currency',
@@ -10,6 +12,7 @@ function CategoriaDetalhes({ voltar, categoria, movimentacoes }) {
     })
   }
 
+  // Retorna a classe CSS apropriada para a cor do valor com base no tipo da movimentação.
   function pegarClasseValor(tipo) {
     if (tipo === 'receita') {
       return 'valor-positivo'

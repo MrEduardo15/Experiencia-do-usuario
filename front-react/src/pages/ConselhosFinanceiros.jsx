@@ -1,3 +1,4 @@
+// Componente que exibe uma lista de conselhos financeiros estáticos para o usuário.
 function ConselhosFinanceiros({ voltar, usuario }) {
   const conselhos = [
     {

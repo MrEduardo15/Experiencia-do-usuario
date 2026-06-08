@@ -1,5 +1,6 @@
 import { useState } from 'react'
 
+// Componente de configurações de conta que permite editar dados pessoais do usuário.
 function Configuracoes({ voltar, usuario, setUsuario }) {
   const [nome, setNome] = useState(usuario.nome)
   const [telefone, setTelefone] = useState(usuario.telefone)
@@ -18,6 +19,7 @@ function Configuracoes({ voltar, usuario, setUsuario }) {
     setMensagem('Alterações salvas com sucesso!')
   }
 
+  // Formata o telefone digitado para o padrão brasileiro (00) 00000-0000.
   function formatarTelefone(valor) {
   const numeros = valor.replace(/\D/g, '')
 

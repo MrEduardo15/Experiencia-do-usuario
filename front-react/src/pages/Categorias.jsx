@@ -1,8 +1,11 @@
 import { useState } from 'react'
 
+// Componente que exibe as categorias do usuário e permite criar novas categorias.
 function Categorias({ voltar, categorias, adicionarCategoria, abrirCategoria, usuario }) {
   const [novaCategoria, setNovaCategoria] = useState('')
 
+  // Trata o envio do formulário de nova categoria.
+  // Chama adicionarCategoria e limpa o campo após salvar.
   function salvarCategoria(event) {
     event.preventDefault()
 

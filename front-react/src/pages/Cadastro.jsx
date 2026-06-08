@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+
+// Componente de cadastro que renderiza o formulário e gerencia os estados dos campos.
 function Cadastro({ voltarLogin, cadastrarUsuario }) {
   const [nome, setNome] = useState('')
   const [telefone, setTelefone] = useState('')
@@ -8,7 +10,9 @@ function Cadastro({ voltarLogin, cadastrarUsuario }) {
   const [confirmarSenha, setConfirmarSenha] = useState('')
   const [erro, setErro] = useState('')
   const [dataNascimento, setDataNascimento] = useState('')
-
+  
+  // Formata o valor do telefone enquanto o usuário digita.
+  // Remove caracteres não numéricos e aplica o padrão (00) 00000-0000.
   function formatarTelefone(valor) {
     const numeros = valor.replace(/\D/g, '')
 
@@ -23,6 +27,9 @@ function Cadastro({ voltarLogin, cadastrarUsuario }) {
     return `(${numeros.slice(0, 2)}) ${numeros.slice(2, 7)}-${numeros.slice(7, 11)}`
   }
 
+
+  // Valida os dados do formulário e chama a função de cadastro.
+  // Verifica campos obrigatórios, tamanho da senha e se as senhas coincidem.
   function fazerCadastro(event) {
     event.preventDefault()
 
