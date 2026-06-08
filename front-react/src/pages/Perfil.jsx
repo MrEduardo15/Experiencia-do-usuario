@@ -60,11 +60,6 @@ function Perfil({ voltar, usuario }) {
           </div>
 
           <div className="grupo-info">
-            <h2>DATA DE NASCIMENTO:</h2>
-            <p>{formatarData(usuario.dataNascimento)}</p>
-          </div>
-
-          <div className="grupo-info">
             <h2>EMAIL:</h2>
             <p>{esconderEmail(usuario.email)}</p>
           </div>

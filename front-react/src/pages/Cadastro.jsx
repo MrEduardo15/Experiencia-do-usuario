@@ -96,13 +96,6 @@ function Cadastro({ voltarLogin, cadastrarUsuario }) {
             maxLength="15"
           />
 
-        <label>DATA DE NASCIMENTO</label>
-        <input
-            type="date"
-            value={dataNascimento}
-            onChange={(event) => setDataNascimento(event.target.value)}
-        />
-
           <label>E-MAIL</label>
           <input
             type="email"

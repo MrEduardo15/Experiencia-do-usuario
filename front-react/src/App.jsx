@@ -46,7 +46,7 @@ function App() {
     {
       id: 1,
       tipo: 'receita',
-      descricao: 'Salário',
+      descricao: 'Mensalidade da faculdade',
       valor: 2500,
       data: '2026-05-17',
       categoria: 'Faculdade'
