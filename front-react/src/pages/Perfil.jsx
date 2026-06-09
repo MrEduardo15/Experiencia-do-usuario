@@ -18,28 +18,6 @@ function Perfil({ voltar, usuario }) {
     return `${inicio}**********@${dominio}`
   }
 
-  // Função para converter datas do formato YYYY-MM-DD para DD/MM/YYYY
-  function formatarData(data) {
-    // Verifica se a data existe
-    if (!data) {
-        return ''
-    }
-
-    // Caso já esteja formatada, retorna sem alterações
-    if (data.includes('/')) {
-        return data
-    }
-
-    const partes = data.split('-')
-
-    // Verifica se a data está no formato esperado
-    if (partes.length !== 3) {
-        return data
-    }
-
-    return `${partes[2]}/${partes[1]}/${partes[0]}`
-  }
-
   return (
     <>
       {/* Cabeçalho da página de perfil */}
