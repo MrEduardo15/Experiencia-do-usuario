@@ -23,7 +23,6 @@ function App() {
     nome: 'Kamila Dantas Luongo',
     telefone: '(11) 91845-4568',
     email: 'kamila@gmail.com',
-    dataNascimento: '05/12/1980'
   })
 
   const [categorias, setCategorias] = useState([
@@ -177,7 +176,6 @@ function App() {
       nome: dadosCadastro.nome,
       telefone: dadosCadastro.telefone,
       email: dadosCadastro.email,
-      dataNascimento: dadosCadastro.dataNascimento
     })
 
     alert('Cadastro realizado com sucesso!')
