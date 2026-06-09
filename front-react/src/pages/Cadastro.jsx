@@ -9,7 +9,6 @@ function Cadastro({ voltarLogin, cadastrarUsuario }) {
   const [senha, setSenha] = useState('')
   const [confirmarSenha, setConfirmarSenha] = useState('')
   const [erro, setErro] = useState('')
-  const [dataNascimento, setDataNascimento] = useState('')
   
   // Formata o valor do telefone enquanto o usuário digita.
   // Remove caracteres não numéricos e aplica o padrão (00) 00000-0000.
@@ -36,7 +35,6 @@ function Cadastro({ voltarLogin, cadastrarUsuario }) {
    if (
     nome.trim() === '' ||
     telefone.trim() === '' ||
-    dataNascimento.trim() === '' ||
     email.trim() === '' ||
     senha.trim() === '' ||
     confirmarSenha.trim() === ''
@@ -59,7 +57,6 @@ function Cadastro({ voltarLogin, cadastrarUsuario }) {
         nome,
         telefone,
         email,
-        dataNascimento
     })
   }
 
