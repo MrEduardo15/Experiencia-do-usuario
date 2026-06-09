@@ -106,28 +106,28 @@ O objetivo do projeto é oferecer uma experiência simples e intuitiva para o us
 
 ## Estrutura do Projeto
 
-text
-src
-├── pages
-│   ├── Cadastro.jsx
-│   ├── CategoriaDetalhes.jsx
-│   ├── Categorias.jsx
-│   ├── Configuracoes.jsx
-│   ├── ConselhosFinanceiros.jsx
-│   ├── Despesas.jsx
-│   ├── Extrato.jsx
-│   ├── Investimentos.jsx
-│   ├── Login.jsx
-│   ├── Mensagens.jsx
-│   ├── Notificacoes.jsx
-│   ├── Perfil.jsx
-│   ├── Pesquisa.jsx
-│   ├── Principal.jsx
-│   ├── Receitas.jsx
-│   └── TabelaGastos.jsx
-├── App.jsx
-├── main.jsx
-└── index.css
+    text
+    src
+    ├── pages
+    │   ├── Cadastro.jsx
+    │   ├── CategoriaDetalhes.jsx
+    │   ├── Categorias.jsx
+    │   ├── Configuracoes.jsx
+    │   ├── ConselhosFinanceiros.jsx
+    │   ├── Despesas.jsx
+    │   ├── Extrato.jsx
+    │   ├── Investimentos.jsx
+    │   ├── Login.jsx
+    │   ├── Mensagens.jsx
+    │   ├── Notificacoes.jsx
+    │   ├── Perfil.jsx
+    │   ├── Pesquisa.jsx
+    │   ├── Principal.jsx
+    │   ├── Receitas.jsx
+    │   └── TabelaGastos.jsx
+    ├── App.jsx
+    ├── main.jsx
+    └── index.css
 
 
 ## Como Executar o Projeto
