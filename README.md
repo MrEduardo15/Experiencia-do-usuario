@@ -134,13 +134,11 @@ O objetivo do projeto é oferecer uma experiência simples e intuitiva para o us
 
 ### 1. Instalar as dependências
 
-bash
 npm install
 
 
 ### 2. Rodar o projeto
 
-bash
 npm run dev
 
 
